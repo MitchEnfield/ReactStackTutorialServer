@@ -11,7 +11,7 @@ import users from "./routes/users";
 dotenv.config();
 const app = express();
 app.use(bodyParser.json());
-mongoose.mpromise = Promise;
+mongoose.Promise = Promise;
 mongoose.connect(process.env.MONGODB_URL, { useMongoClient: true });
 
 app.use("/api/auth", auth);
