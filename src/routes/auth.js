@@ -17,7 +17,7 @@ router.post("/", (req, res) => {
 });
 
 router.post('/confirmation', (req, res) => {
-  const token = req.body.token;
+  const { token } = req.body;
   User.findOneAndUpdate(
     { confirmationToken: token },
     { confirmationToken: "", confirmed: true },
